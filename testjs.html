@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+
+<body>
+<script>
+
+
+var parseParams = function() {
+    var index = 0,
+        eat = function(strToEat, stopChar) {
+            var fv = '',
+                curr = '';
+
+            do {
+                curr = strToEat.charAt(index++)
+
+                if (curr !== stopChar) {
+                    fv += curr;
+                }
+            } while (curr !== stopChar && index < strToEat.length);
+
+            return fv;      
+        };
+
+    return function(strToParse) {
+        var j,
+            fieldValue,
+            fORv = '',
+            c = ''
+            res = [];
+
+        if (! strToParse || strToParse.length <= 0) {
+            throw new Error("please pass valid string")
+        }
+
+        index = 0;   // index needs to be reset each time called
+
+        // get past initial ?, don't care about start of string
+        eat(strToParse, '?');
+
+        while (index < strToParse.length) {
+            // eat until next & or end of string
+            // a fieldValue should be returned e.g. p1=22
+            //
+            fieldValue = eat(strToParse, '&');
+ 
+            for (j = 0; j < fieldValue.length; j++) {
+                c = fieldValue.charAt(j);
+                if (c === '=') {
+                    res[res.length] = fORv;  // left side field
+                    fORv = '';
+                } else {
+                    fORv += c;
+                }
+
+            }
+            res[res.length] = fORv;   //right side value
+            fORv = '';
+        }
+
+        return res.join(',');
+    };
+
+}();
+
+console.log(parseParams("www.hotmail.com?name=denis"));
+console.log(parseParams("www.hotmail.com?p1=21&p2=55"));
+console.log(parseParams("www.hotmail.com"));
+console.log(parseParams(""));
+
+
+
+
+
+console.log(strReverse("hello"));
+
+//take a string and repalce &s with -s
+/*function replace(str, replace, new) {
+
+    if (! str) {
+        throw new Error("please pass str");
+    }
+
+    for (i = )
+}
+*/
+
+
+</script>
+</body>
+</html>

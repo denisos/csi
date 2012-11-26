@@ -51,9 +51,17 @@ Performance
 
 Links
 =====
-http://en.wikipedia.org/wiki/Big_O_notation
+* http://en.wikipedia.org/wiki/Big_O_notation
+* http://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/
 
-http://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/
+
+Whats in here?
+==============
+* Sort algorithms
+* Search algorithms
+* String functions: compress, uncompress, reverse, parseUrlParams. Soon: splice
+* All written as node modules and tested using mocha test framework following bdd 
+
 
 
 scratch
@@ -64,3 +72,83 @@ function factorial(num) {
        return n * factorial(n - 1);
     }
 }
+
+
+
+
+Given a list of phone numbers, determine if it is 
+consistent. In a consistent phone list no number 
+is a prefix of another. For example:
+
+    o) Bob 91 12 54 26
+    o) Alice 97 625 992
+    o) Emergency 911
+
+In this case, it is not possible to call Bob because 
+the phone exchange would direct your call to the 
+emergency line as soon as you dialled the first three 
+digits of Bob's phone number. So this list would not 
+be consistent.
+
+
+Spell out a number. For example
+
+      99 --> ninety nine
+     300 --> three hundred
+     310 --> three hundred and ten
+    1501 --> one thousand, five hundred and one
+   12609 --> twelve thousand, six hundred and nine
+  512607 --> five hundred and twelve thousand,
+             six hundred and seven
+43112603 --> forty-three million, one hundred and
+             twelve thousand,
+             six hundred and three
+
+[Source http://rosettacode.org]
+
+
+
+Develop a recently-used-list class to hold strings 
+uniquely in Last-In-First-Out order.
+
+o) A recently-used-list is initially empty.
+
+o) The most recently added item is first, the least
+   recently added item is last.
+
+o) Items can be looked up by index, which counts from zero.
+
+o) Items in the list are unique, so duplicate insertions
+   are moved rather than added.
+
+Optional extras
+
+o) Null insertions (empty strings) are not allowed.
+
+o) A bounded capacity can be specified, so there is an upper
+   limit to the number of items contained, with the least
+   recently added items dropped on overflow.
+
+
+
+-------------------------------------------------------------------------
+
+
+Given a string, strip all occurences of consecutively 
+occuring backslash and newline characters. For example, 
+assuming that:
+"\\" represents '\' and 
+"\n" represents '\n'
+
+  "ab\\\ncd\\\nef" --> "abcdef" (two stripped out)
+
+  "abc\\\ndef"     --> "abcdef" (one stripped out)
+
+  "abc\n\\def"     --> unchanged (wrong order)
+
+  "abc\\def"       --> unchanged (no \n)
+
+  "abc\ndef"       --> unchanged (no \)
+
+  "abcdef"         --> unchanged
+
