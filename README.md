@@ -1,7 +1,17 @@
 csi
 ===
 
-Compuer Science algorithms and more
+Whats in here?
+-------------
+* Compuer Science algorithms and more
+* All written as node modules and tested using Mocha test framework 
+* Sort algorithms
+* Search algorithms
+* Data Structures
+* String functions: compress, uncompress, reverse, parseUrlParams. Soon: splice
+* Programming problems
+* A programming kata space
+
 
 Algorithms can be analyzed and classified by their efficiency in how they handle data sets.
 For example an algorithm which has to go over every element in an set is said to be "linear"; e.g. If there are 200 elements there are 200 steps, if 2 million elements then 2 million steps.
@@ -55,12 +65,6 @@ Links
 * http://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/
 
 
-Whats in here?
-==============
-* Sort algorithms
-* Search algorithms
-* String functions: compress, uncompress, reverse, parseUrlParams. Soon: splice
-* All written as node modules and tested using mocha test framework following bdd 
 
 
 
@@ -75,7 +79,11 @@ function factorial(num) {
 
 
 
+Puzzles
+=======
 
+Phone Numbers
+-------------
 Given a list of phone numbers, determine if it is 
 consistent. In a consistent phone list no number 
 is a prefix of another. For example:
@@ -91,6 +99,8 @@ digits of Bob's phone number. So this list would not
 be consistent.
 
 
+Spell Numbers
+-------------
 Spell out a number. For example
 
       99 --> ninety nine
@@ -107,7 +117,8 @@ Spell out a number. For example
 [Source http://rosettacode.org]
 
 
-
+List Class
+-------------
 Develop a recently-used-list class to hold strings 
 uniquely in Last-In-First-Out order.
 
@@ -131,14 +142,13 @@ o) A bounded capacity can be specified, so there is an upper
 
 
 
--------------------------------------------------------------------------
-
-
+String strip
+------------
 Given a string, strip all occurences of consecutively 
 occuring backslash and newline characters. For example, 
 assuming that:
-"\\" represents '\' and 
-"\n" represents '\n'
+*"\\" represents '\' and 
+*"\n" represents '\n'
 
   "ab\\\ncd\\\nef" --> "abcdef" (two stripped out)
 
@@ -152,3 +162,9 @@ assuming that:
 
   "abcdef"         --> unchanged
 
+
+Others
+------
+* http://99-bottles-of-beer.net/
+* http://rigaux.org/language-study/various/is-a-cow-an-animal/
+* funny: http://uncyclopedia.wikia.com/wiki/You_have_two_cows/18#HTML_.28Microsoft.29
