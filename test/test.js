@@ -1,5 +1,21 @@
 var assert = require("should"),
+    sortFunctions = require(__dirname + '/../sortFunctions');
     stringFunctions = require(__dirname + '/../stringFunctions');
+
+/*****************  SORT FNS  **************************/
+
+describe('sortFunctions', function(){
+  describe('#insertionSort', function(){
+    it('should return 1,2,3,4,5,6 for 6,5,3,4,1,2', function(){
+      assert.equal('1,2,3,4,5,6', sortFunctions.insertionSort([6,5,3,4,1,2]).join(','));
+    });
+
+  });
+
+});
+
+/*****************  STRING FNS  **************************/
+
 
 describe('stringFunctions', function(){
   describe('#strCompress', function(){
@@ -66,5 +82,7 @@ describe('stringFunctions', function(){
 
 
 });
+
+/*******************************************/
 
 

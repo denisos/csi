@@ -7,6 +7,28 @@
 <script>
 
 
+function insertionSort(list) {
+    var i = 1,
+        j,
+        temp,
+        len = list.length;
+
+    for (; i < len; i++) {
+        temp = list[i];
+
+        for (j=i; j > 0 && list[j - 1] > temp; j--) {
+            list[j] = list[j - 1];
+        }
+        list[j] = temp;
+    }
+
+    return list;
+
+};
+
+console.log(insertionSort([7,2,3,1,9,8]));
+
+/*
 var parseParams = function() {
     var index = 0,
         eat = function(strToEat, stopChar) {
@@ -75,7 +97,7 @@ console.log(parseParams(""));
 
 
 console.log(strReverse("hello"));
-
+*/
 //take a string and repalce &s with -s
 /*function replace(str, replace, new) {
 
