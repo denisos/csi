@@ -1,6 +1,13 @@
 csi
 ===
 
+Tests
+-----
+Uses Mocha test framework with should a BDD assertion library.
+
+Run Tests: type "mocha" in the root
+
+
 Whats in here?
 -------------
 * Compuer Science algorithms and more
@@ -27,9 +34,9 @@ Examples (from best to worst)
 -----------------------------
 * O(1)         - always executes in the same time regardless of the input e.g. check if number is even or odd
 * O(log n)     - logarithmic, number steps is proportional to the logarithm of the length of the list being searched, doubling size of set has little effect since after 1st iteration the data set is halved
-* O(n/2)       - twosies,  all elements two at a time
-* O(n)         - linear, all elements one at a time, so performance will increase 1 to 1 as data set increases
-* O(n squared) - quadratic
+* O(n/2)       - twosies, all elements two at a time
+* O(n)         - linear, all elements one at a time, so performance will increase 1 to 1 as data set increases e.g. search an unsorted list for an element
+* O(n squared) - quadratic [bubble, selection, insertion]
 * O(n!)        - factorial (the result of multipling all positive integers less than or equal to n). Factorial gets very big very fast e.g. if n is 6 then 6! = 720 (6*5*4*3*2*1). It is about the worst possible performance.   
 
 Omega
@@ -63,7 +70,7 @@ Links
 =====
 * http://en.wikipedia.org/wiki/Big_O_notation
 * http://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/
-
+* http://www.algolist.net/
 
 
 

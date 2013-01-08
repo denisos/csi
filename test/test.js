@@ -1,5 +1,5 @@
 var assert = require("should"),
-    sortFunctions = require(__dirname + '/../sortFunctions');
+    sortFunctions = require(__dirname + '/../sortFunctions'),
     stringFunctions = require(__dirname + '/../stringFunctions');
 
 /*****************  SORT FNS  **************************/
@@ -7,7 +7,7 @@ var assert = require("should"),
 describe('sortFunctions', function(){
   describe('#insertionSort', function(){
     it('should return 1,2,3,4,5,6 for 6,5,3,4,1,2', function(){
-      assert.equal('1,2,3,4,5,6', sortFunctions.insertionSort([6,5,3,4,1,2]).join(','));
+      sortFunctions.insertionSort([6,5,3,4,1,2]).join(',').should.equal('1,2,3,4,5,6');
     });
 
   });
@@ -20,26 +20,25 @@ describe('sortFunctions', function(){
 describe('stringFunctions', function(){
   describe('#strCompress', function(){
     it('should return a3b2 for aaabb', function(){
-      assert.equal('a3b2', stringFunctions.strCompress('aaabb'));
+      stringFunctions.strCompress('aaabb').should.equal('a3b2');
     });
 
     it('should return z3 for zzz', function(){
-      assert.equal('z3', stringFunctions.strCompress('zzz'));
+      stringFunctions.strCompress('zzz').should.equal('z3');
     });
 
     it('should return a1 for a', function(){
-      assert.equal('a1', stringFunctions.strCompress('a'));
+      stringFunctions.strCompress('a').should.equal('a1');
     });
 
     it('should return a5b3a2b1 for aaaaabbbaab', function(){
-      assert.equal('a5b3a2b1', stringFunctions.strCompress('aaaaabbbaab'));
+      stringFunctions.strCompress('aaaaabbbaab').should.equal('a5b3a2b1');
     });
 
     it('should return exception for null', function(){
         try {
            stringFunctions.strCompress(null).should.throw();
         } catch(e) {
-
         }
     });
 
@@ -80,7 +79,24 @@ describe('stringFunctions', function(){
     });        
   });
 
+  describe('#hasAllUniqueChars', function(){
+    it('should return false for abcdefaghijk', function(){
+      stringFunctions.hasAllUniqueChars("abcdefaghijk").should.be.false;
+    });
 
+    it('should return false for abcdefaghijk', function(){
+      stringFunctions.hasAllUniqueChars("abcdefghijk").should.be.true;
+    });
+
+    it('should return false for abcdefaghijk', function(){
+        stringFunctions.hasAllUniqueChars("").should.throw();
+    });
+
+    it('should return false for abcdefaghijk', function(){
+      stringFunctions.hasAllUniqueChars("a").should.be.true;
+    });
+      
+  });  
 });
 
 /*******************************************/

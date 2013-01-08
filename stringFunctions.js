@@ -98,7 +98,7 @@ module.exports.reverseIt = function(strToRev) {
     return newStr;
 };
 
-// parse url params e.g. given www.mysite.com?p1=21&p2=55" return p1,21,p2,55
+// parse url params e.g. given url decoded www.mysite.com?p1=21&p2=55" return p1,21,p2,55
 module.exports.parseUrlParams = function(strToParse) {
     var index = 0,
         j,
@@ -150,5 +150,49 @@ module.exports.parseUrlParams = function(strToParse) {
     }
 
     return res.join(',');
+};
+
+
+/*
+ * Checks if input string passed has all unique chars
+ * @param inputStr an input string
+ * @return true if only has unique chars or is '' 
+ *         false if any char is repeated
+ * @throws Error if inputStr is null
+ */
+
+module.exports.hasAllUniqueChars = function(inputStr) {
+    var len,
+        hashObj,
+        i,
+        curr;
+
+
+    if (inputStr === null) {
+        throw new Error("input string cannot be null");
+    }
+
+    len = inputStr.length;
+
+    // empty or 1 char is unique
+    if (len <= 1) {
+        return true;
+    }
+
+    // use a js object as hash
+    for (hashObj = {}, i = 0; i < len; i++) {
+        curr = inputStr.charAt(i);
+
+        // if the hash already has the current char then return fasle
+        // otherwise add this unique char to the hash
+        //
+        if (hashObj[curr]) {
+            return false;
+        } else {
+            hashObj[curr] = 1;
+        }
+    }
+
+    return true;
 };
 
